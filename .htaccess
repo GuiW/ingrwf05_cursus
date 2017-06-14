@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteRule perdu.html index.php [L]
+RewriteRule ([a-z]*)\.html index.php?page=$1 [L]
