@@ -1,3 +1,5 @@
+<?php include("functions.php") ?>
+
 <?php include("includes/header.php") ?>
 
 <?php
@@ -11,9 +13,13 @@
       case 'contact' :
         include("includes/contact.php");
         break;
+        //Par défaut, si le contenu de $_GET est différent de 'about' et 'contact', on renverra l'utilisateur vers la homepage
       default :
         include("includes/home.php");
     endswitch;
+
+  elseif ( isset($_GET['projet']) ) :
+    include("includes/projet.php");
 
   else :
     include("includes/home.php");
@@ -22,7 +28,3 @@
 ?>
 
 <?php include("includes/footer.php") ?>
-
-<?php 
-  print_r($_GET)
-?>

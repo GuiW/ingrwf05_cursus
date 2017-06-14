@@ -1,3 +1,8 @@
 RewriteEngine on
 RewriteRule perdu.html index.php [L]
+RewriteRule project-([0-9]*)\.html index.php?projet=$1 [L]
 RewriteRule ([a-z]*)\.html index.php?page=$1 [L]
+
+# Quand on va écrire dans l'url "about.html", il va enfait renvoyer vers "index.php?page=about"
+# $1 reprend ce qu'on a écrit entre []
+
