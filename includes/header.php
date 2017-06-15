@@ -20,6 +20,18 @@ Set the type and color theme here -->
     background : khaki;
     padding : 10px;
   }
+
+  #add_module_btn {
+    padding : 24px;
+  }
+
+  #add_module_form {
+    padding : 24px;
+  }
+
+  .hidden {
+    display : none;
+  }
 </style>
 
 </head>

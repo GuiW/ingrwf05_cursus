@@ -33,7 +33,7 @@
         
       endif; ?>
 			<!-- End project -->
-
 		</ul>
 	</div>
 </div>
+<?php include("includes/form.php")?>

@@ -22,6 +22,12 @@
 <script src="js/foundation.min.js"></script>
 <script src="js/hawthorne.js"></script>
 
+<!-- TinyMCE -->
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script>
+
+<script src="js/main.js"></script>
+
 </body>
 </html>
 <?php debug(); ?>
