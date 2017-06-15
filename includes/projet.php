@@ -1,21 +1,32 @@
-<div class="row">
-	<div class="small-12 medium-7 large-7 columns">
-		<h2>Dry, Agile, SMACSS, Git, Bower,...</h2>
-		<p>Regardez <a href="https://lr-et-lo.be/methodologie/" target="_blank">notre fiche technique <i class="fa fa-external-link"></i></a> pour un peu d'aide.</p>
-		<p>L’idée : ne pas répéter deux fois le même code surtout pour un projet maintenu à long terme.</p>
+<?php
 
-	<p>Ca dépasse le stade du code (pas que copier/coller) mais également au niveau de la connaissance : collecte, organisation, modélisation…. Il est nécessaire aussi d’organiser la veille technologique d’une entreprise sans dupliquer ou répéter deux fois la même chose/recherche/stockage dans un secteur en perpétuel changement.</p>
-</div>
-	<div class="small-12 medium-5 large-5 columns">
-		<div class="lined-list">
-			<ul>
-				<li><strong>Rôle:</strong> Gestion de projet</li>
-				<li><strong>Responsable:</strong> Pierre Charlier</li>
-				<li><strong>Centre:</strong> Cepegra</li>
-				<li><strong>Année:</strong> 2016</li>
-			</ul>
-		</div>
-	</div>
+//On veut afficher les lignes dont la propriété id_personnes = la valeur du paramètre id_personnes de l'url
+  $sql = "SELECT * FROM modules WHERE id_module =".$_GET['projet'];
+//$the_personne contient la ligne de la table 
+  $the_module = $connect->query($sql);
+  echo $connect->error;
+  $the_nb_module = $the_module->num_rows;
+
+?>
+
+<div class="row">
+  <?php if ( isset($the_nb_module) AND $the_nb_module > 0 ) : 
+
+    while ( $row = $the_module -> fetch_object() ) : ?>
+    <div class="small-12 medium-7 large-7 columns">
+      <h2><?php echo $row->titre ?></h2>
+      <?php echo $row->contenu ?>
+    </div>
+    <div class="small-12 medium-5 large-5 columns">
+      <div class="lined-list">
+        <ul>
+          <li><strong>Rôle:</strong> <?php echo $row->role ?></li>
+          <li><strong>Responsable:</strong> <?php echo $row->responsable ?></li>
+          <li><strong>Centre:</strong> <?php echo $row->centre ?></li>
+          <li><strong>Année:</strong> <?php echo $row->annee ?></li>
+        </ul>
+      </div>
+    </div>
 </div>
 
 <div class="row">
@@ -24,24 +35,33 @@
 		
 		<!-- Begin project image -->
 		<div class="project-img">
-			<img src="img/projects/agile.jpg" alt="Méthode Agile" />
-			<h6>Méthodes Agile</h6>
+			<img src="img/projects/<?php echo $row->image1?>" alt="<?php echo $row->alt_image1?>" />
+			<h6><?php echo $row->alt_image1?></h6>
 		</div>
 		<!-- End project image -->
-		
+		<?php if ( $row->image2 != NULL) : ?>
 		<!-- Begin project image -->
 		<div class="project-img">
-			<img src="img/projects/versionning.png" alt="Versioning" />
-			<h6>Versioner son projet</h6>
+			<img src="img/projects/<?php echo $row->image2?>" alt="<?php echo $row->alt_image2?>" />
+			<h6><?php echo $row->alt_image2?></h6>
 		</div>
 		<!-- End project image -->
-		
+    <?php endif; ?>
+		<?php if ( $row->image3 != NULL) : ?>
 		<!-- Begin project image -->
 		<div class="project-img">
-			<img src="img/projects/workflow.png" alt="Workflow Web" />
-			<h6>Workflown</h6>
+			<img src="img/projects/<?php echo $row->image3?>" alt="<?php echo $row->alt_image3?>" />
+			<h6><?php echo $row->alt_image3?></h6>
 		</div>
 		<!-- End project image -->
+    <?php endif; ?>
+    
 		
 	</div>
+  <?php endwhile;
+
+  else : ?>
+    <h2>Il n'y a rien à afficher, désolé :(</h2>
+
+  <?php endif; ?>
 </div>

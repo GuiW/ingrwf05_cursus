@@ -1,7 +1,6 @@
 <?php 
   require("config.php");
   include("functions.php");
-
 ?>
 
 <?php include("includes/header.php") ?>
