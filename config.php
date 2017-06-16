@@ -19,4 +19,7 @@ else :
 
 endif;
 
+//On plaçant le session_start, la session sera ouverte en permanence
+session_start();
+
 ?>

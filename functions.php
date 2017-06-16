@@ -25,6 +25,9 @@
         echo '<strong>$_GET :</strong><br>';
         print_r($_GET);
 
+        echo '<strong>$_SESSION :</strong><br>';
+        print_r($_SESSION);
+
       echo "</pre>";
       echo '</div>';
     

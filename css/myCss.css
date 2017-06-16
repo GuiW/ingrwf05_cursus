@@ -1,0 +1,86 @@
+#debug {
+  background : khaki;
+  padding : 10px;
+}
+
+#add_module_btn {
+  margin-left : 24px;
+}
+
+#add_module_form {
+  padding : 24px;
+}
+
+#close_module_btn {
+  float : right;
+  margin-top : 15px;
+}
+
+.toggle_btn {
+  background : lightgrey;
+  line-height : 20px;
+  padding : 10px;
+}
+
+.hidden {
+  display : none;
+}
+
+
+/****************************/
+/*********** ADMIN **********/
+/****************************/
+
+  #admin_form {
+    position : fixed;
+    z-index : 1000;
+    left : 50%;
+    top : 35%;
+    transform : translate(-50%);
+    width : 500px;
+    background : lightgrey;
+    padding : 20px;
+  }
+
+  #admin_form form {
+    position : relative;
+  }
+
+  #admin_form h2 {
+    font-weight : 200;
+  }
+
+  #admin_mask {
+    position : fixed;
+    top : 0;
+    z-index : 999;
+    width : 100vw;
+    height : 100vw;
+    background : rgba(0,0,0,0.8);
+  }
+
+  #admin_close_btn {
+    display : block;
+    position : absolute;
+    top : 0px;
+    right : 0px;
+    font-size : 1rem;
+    width : 27px; line-height : 25px;
+    text-align : center;
+    border : 1px solid black;
+    border-radius : 50%;
+  }
+
+  input[name=connexion] {
+    background : dimgrey;
+    color : white;
+    border : none;
+    font-weight : 200;
+    font-size : 1rem;
+    padding : 10px 20px;
+  }
+
+  .erreur {
+    color : red;
+    font-size : 1.2rem;
+  }

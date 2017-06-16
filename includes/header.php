@@ -14,25 +14,7 @@ Set the type and color theme here -->
 
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <script src="js/vendor/modernizr.js"></script>
-
-<style>
-  #debug {
-    background : khaki;
-    padding : 10px;
-  }
-
-  #add_module_btn {
-    padding : 24px;
-  }
-
-  #add_module_form {
-    padding : 24px;
-  }
-
-  .hidden {
-    display : none;
-  }
-</style>
+<link href="css/myCss.css" rel="stylesheet">
 
 </head>
 <body>
@@ -59,6 +41,11 @@ Set the type and color theme here -->
 				<li><a href="index.html" <?php myCurrent("index"); ?>>En vedette</a></li>
 				<li><a href="about.html" <?php myCurrent("about"); ?>>A propos</a></li>
 				<li><a href="contact.html" <?php myCurrent("contact"); ?>>Contact</a></li>
+        <?php if ( isset($_SESSION['id_user'])) : 
+          //Pour se déconner, on va renvoyer vers la page admin.php avec $_GET qui contient delog
+        ?>
+        <li><a href="includes/admin.php?delog">Se déconnecter</a></li>
+        <?php endif; ?>
 			</ul>
 		</nav>
 	</div>

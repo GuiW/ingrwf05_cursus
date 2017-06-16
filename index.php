@@ -16,6 +16,7 @@
       case 'contact' :
         include("includes/contact.php");
         break;
+
         //Par défaut, si le contenu de $_GET est différent de 'about' et 'contact', on renverra l'utilisateur vers la homepage
       default :
         include("includes/home.php");
